@@ -41,13 +41,13 @@
       id="loginModal"
       tabindex="-1"
       role="dialog"
-      aria-labelledby="loginModalLabel"
+      aria-labelledby="login_modal"
       aria-hidden="true"
     >
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="loginModalLabel">Login</h5>
+            <h5 class="modal-title" id="login_modal">Login</h5>
             <button
               type="button"
               class="close"
@@ -59,7 +59,7 @@
           </div>
           <div class="modal-body">
             <div class="form-group">
-              <label for="exampleInputEmail">Email address</label>
+              <label for="email">Email address</label>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="basic-addon3">
@@ -69,14 +69,14 @@
                 <input
                   type="text"
                   class="form-control"
-                  id="exampleInputEmail"
+                  id="login_email"
                   aria-describedby="basic-addon3"
                   placeholder="correo registrado"
                 />
               </div>
             </div>
             <div class="form-group">
-              <label for="exampleInputPassword">Password</label>
+              <label for="password">Password</label>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="basic-addon3">
@@ -86,7 +86,7 @@
                 <input
                   type="text"
                   class="form-control"
-                  id="exampleInputPassword"
+                  id="login_password"
                   aria-describedby="basic-addon3"
                   placeholder="contraseña"
                 />
@@ -122,18 +122,19 @@
       id="registerModal"
       tabindex="-1"
       role="dialog"
-      aria-labelledby="loginModalLabel"
+      aria-labelledby="register_modal"
       aria-hidden="true"
     >
       <form
         enctype="text/plain"
         method="post"
+        oninput='confcontra.setCustomValidity(confcontra.value != contra.value ? "Las contraseñas no coinciden." : "")'
         action="mailto:correo@iteso.mx?subject=Contacto"
       >
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="loginModalLabel">Registra usuario</h5>
+              <h5 class="modal-title" id="register_modal">Registra usuario</h5>
               <button
                 type="button"
                 class="close"
@@ -151,10 +152,12 @@
                     <input
                       type="text"
                       class="form-control"
-                      id="exampleInputEmail"
+                      id="register_name"
                       aria-describedby="basic-addon3"
                       placeholder="Nombre o nombres"
                       name="nombre"
+                      pattern="[A-Za-z]+.{2,}"
+                      title="Ingresa al menos 3 letras"
                       required
                     />
                   </div>
@@ -162,10 +165,12 @@
                     <input
                       type="text"
                       class="form-control"
-                      id="exampleInputEmail"
+                      id="register_last_name"
                       aria-describedby="basic-addon3"
                       placeholder="Apellidos"
                       name="apellido"
+                      pattern="[A-Za-z]+.{2,}"
+                      title="Ingresa al menos 3 letras"
                       required
                     />
                   </div>
@@ -177,29 +182,33 @@
                   <input
                     type="text"
                     class="form-control col-12"
-                    id="exampleInputEmail"
+                    id="register_email"
                     aria-describedby="basic-addon3"
                     placeholder="Tu correo"
                     name="email"
+                    pattern="(?=.*[@]).{4,}"
+                    title="Ingresa un correo válido"
                     required
                   />
                 </div>
                 <div class="input-group mb-3">
                   <input
-                    type="text"
+                    type="password"
                     class="form-control col-12"
-                    id="exampleInputEmail"
+                    id="register_password"
                     aria-describedby="basic-addon3"
                     placeholder="Contraseña"
                     name="contra"
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+                    title="La contraseña debe contener al menos un número, una mayúscula, una minúcula y por lo menos 8 caracteres"
                     required
                   />
                 </div>
                 <div class="input-group mb-3">
                   <input
-                    type="text"
+                    type="password"
                     class="form-control col-12"
-                    id="exampleInputEmail"
+                    id="confirm_password"
                     aria-describedby="basic-addon3"
                     placeholder="Comfirmar contraseña"
                     name="confcontra"
@@ -211,10 +220,11 @@
                   <input
                     type="date"
                     class="form-control col-12"
-                    id="exampleInputEmail"
+                    id="fecha"
                     aria-describedby="basic-addon3"
                     placeholder="Fecha"
                     name="fecha"
+                    max="2020-12-31"
                     required
                   />
                 </div>
@@ -226,6 +236,7 @@
                     name="genero"
                     value="radio_mujer"
                     class="custom-control-input"
+                    required
                   />
                   <label class="custom-control-label" for="radioMujer"
                     >Mujer</label
@@ -238,6 +249,7 @@
                     name="genero"
                     value="radio_hombre"
                     class="custom-control-input"
+                    required
                   />
                   <label class="custom-control-label" for="radioHombre"
                     >Hombre</label
@@ -248,11 +260,13 @@
                 <input
                   type="text"
                   class="form-control col-12"
-                  id="exampleInputEmail"
+                  id="url"
                   aria-describedby="basic-addon3"
                   placeholder="Url de imagen de perfil"
                   inputmode="url"
                   name="url"
+                  pattern=".{4,}"
+                  title="Ingresa una url válida"
                   required
                 />
               </div>
