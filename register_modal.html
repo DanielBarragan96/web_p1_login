@@ -125,120 +125,152 @@
       aria-labelledby="loginModalLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="loginModalLabel">Registra usuario</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="form-group">
-              <!-- Row -->
-              <div class="row">
-                <div class="col-6">
+      <form
+        enctype="text/plain"
+        method="post"
+        action="mailto:correo@iteso.mx?subject=Contacto"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="loginModalLabel">Registra usuario</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <!-- Row -->
+                <div class="row">
+                  <div class="col-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="exampleInputEmail"
+                      aria-describedby="basic-addon3"
+                      placeholder="Nombre o nombres"
+                      name="nombre"
+                      required
+                    />
+                  </div>
+                  <div class="col-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="exampleInputEmail"
+                      aria-describedby="basic-addon3"
+                      placeholder="Apellidos"
+                      name="apellido"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="input-group mb-3">
                   <input
                     type="text"
-                    class="form-control"
+                    class="form-control col-12"
                     id="exampleInputEmail"
                     aria-describedby="basic-addon3"
-                    placeholder="Apellidos"
+                    placeholder="Tu correo"
+                    name="email"
+                    required
                   />
                 </div>
-                <div class="col-6">
+                <div class="input-group mb-3">
                   <input
                     type="text"
-                    class="form-control"
+                    class="form-control col-12"
                     id="exampleInputEmail"
                     aria-describedby="basic-addon3"
-                    placeholder="Apellidos"
+                    placeholder="Contraseña"
+                    name="contra"
+                    required
                   />
                 </div>
-              </div>
-            </div>
+                <div class="input-group mb-3">
+                  <input
+                    type="text"
+                    class="form-control col-12"
+                    id="exampleInputEmail"
+                    aria-describedby="basic-addon3"
+                    placeholder="Comfirmar contraseña"
+                    name="confcontra"
+                    required
+                  />
+                </div>
 
-            <div class="form-group">
-              <div class="input-group mb-3">
-                <input
-                  type="text"
-                  class="form-control col-12"
-                  id="exampleInputEmail"
-                  aria-describedby="basic-addon3"
-                  placeholder="Tu correo"
-                />
-              </div>
-              <div class="input-group mb-3">
-                <input
-                  type="text"
-                  class="form-control col-12"
-                  id="exampleInputEmail"
-                  aria-describedby="basic-addon3"
-                  placeholder="Contraseña"
-                />
-              </div>
-              <div class="input-group mb-3">
-                <input
-                  type="text"
-                  class="form-control col-12"
-                  id="exampleInputEmail"
-                  aria-describedby="basic-addon3"
-                  placeholder="Comfirmar contraseña"
-                />
-              </div>
-              <div class="custom-control custom-radio">
-                <input
-                  type="radio"
-                  id="radioMujer"
-                  name="customRadio"
-                  class="custom-control-input"
-                />
-                <label class="custom-control-label" for="radioMujer"
-                  >Mujer</label
-                >
-              </div>
-              <div class="custom-control custom-radio">
-                <input
-                  type="radio"
-                  id="radioHombre"
-                  name="customRadio"
-                  class="custom-control-input"
-                />
-                <label class="custom-control-label" for="radioHombre"
-                  >Hombre</label
-                >
-              </div>
-            </div>
-            <div class="input-group mb-3">
-              <input
-                type="text"
-                class="form-control col-12"
-                id="exampleInputEmail"
-                aria-describedby="basic-addon3"
-                placeholder="Url de imagen de perfil"
-              />
-            </div>
+                <div class="input-group mb-3">
+                  <input
+                    type="date"
+                    class="form-control col-12"
+                    id="exampleInputEmail"
+                    aria-describedby="basic-addon3"
+                    placeholder="Fecha"
+                    name="fecha"
+                    required
+                  />
+                </div>
 
-            <!-- Final -->
-            <button type="button" class="btn btn-primary" data-dismiss="modal">
-              Registrarse
-            </button>
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-dismiss="modal"
-              id="button_close"
-            >
-              Close
-            </button>
+                <div class="custom-control custom-radio">
+                  <input
+                    type="radio"
+                    id="radioMujer"
+                    name="genero"
+                    value="radio_mujer"
+                    class="custom-control-input"
+                  />
+                  <label class="custom-control-label" for="radioMujer"
+                    >Mujer</label
+                  >
+                </div>
+                <div class="custom-control custom-radio">
+                  <input
+                    type="radio"
+                    id="radioHombre"
+                    name="genero"
+                    value="radio_hombre"
+                    class="custom-control-input"
+                  />
+                  <label class="custom-control-label" for="radioHombre"
+                    >Hombre</label
+                  >
+                </div>
+              </div>
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  class="form-control col-12"
+                  id="exampleInputEmail"
+                  aria-describedby="basic-addon3"
+                  placeholder="Url de imagen de perfil"
+                  inputmode="url"
+                  name="url"
+                  required
+                />
+              </div>
+
+              <!-- Final -->
+              <button type="submit" class="btn btn-primary">Registrarse</button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+                id="button_close"
+              >
+                Close
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </form>
     </div>
 
     <script
