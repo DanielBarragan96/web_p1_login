@@ -23,7 +23,16 @@
       data-toggle="modal"
       data-target="#loginModal"
     >
-      Launch demo modal
+      Login
+    </button>
+
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-toggle="modal"
+      data-target="#registerModal"
+    >
+      Register
     </button>
 
     <!-- Modal -->
@@ -102,6 +111,123 @@
                 Registrate aquí
               </a>
             </small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="registerModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="loginModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="loginModalLabel">Registra usuario</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <div class="form-inline mb-3">
+                <input
+                  type="text"
+                  class="form-control col-6"
+                  id="exampleInputEmail"
+                  aria-describedby="basic-addon3"
+                  placeholder="Nombre o nombres"
+                />
+                <input
+                  type="text"
+                  class="form-control col-6"
+                  id="exampleInputEmail"
+                  aria-describedby="basic-addon3"
+                  placeholder="Apellidos"
+                />
+              </div>
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  class="form-control col-12"
+                  id="exampleInputEmail"
+                  aria-describedby="basic-addon3"
+                  placeholder="Tu correo"
+                />
+              </div>
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  class="form-control col-12"
+                  id="exampleInputEmail"
+                  aria-describedby="basic-addon3"
+                  placeholder="Contraseña"
+                />
+              </div>
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  class="form-control col-12"
+                  id="exampleInputEmail"
+                  aria-describedby="basic-addon3"
+                  placeholder="Comfirmar contraseña"
+                />
+              </div>
+              <div class="custom-control custom-radio">
+                <input
+                  type="radio"
+                  id="radioMujer"
+                  name="customRadio"
+                  class="custom-control-input"
+                />
+                <label class="custom-control-label" for="radioMujer"
+                  >Mujer</label
+                >
+              </div>
+              <div class="custom-control custom-radio">
+                <input
+                  type="radio"
+                  id="radioHombre"
+                  name="customRadio"
+                  class="custom-control-input"
+                />
+                <label class="custom-control-label" for="radioHombre"
+                  >Hombre</label
+                >
+              </div>
+            </div>
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                class="form-control col-12"
+                id="exampleInputEmail"
+                aria-describedby="basic-addon3"
+                placeholder="Url de imagen de perfil"
+              />
+            </div>
+
+            <!-- Final -->
+            <button type="button" class="btn btn-primary" data-dismiss="modal">
+              Registrarse
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+              id="button_close"
+            >
+              Close
+            </button>
           </div>
         </div>
       </div>
