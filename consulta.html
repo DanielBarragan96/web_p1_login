@@ -135,7 +135,7 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="register_modal">Registra usuario</h5>
+              <h5 class="modal-title" id="register_modal">Editar usuario</h5>
               <button
                 type="button"
                 class="close"
@@ -159,6 +159,7 @@
                       name="nombre"
                       pattern="[A-Za-z]+.{2,}"
                       title="Ingresa al menos 3 letras"
+                      value="John"
                       required
                     />
                   </div>
@@ -172,6 +173,7 @@
                       name="apellido"
                       pattern="[A-Za-z]+.{2,}"
                       title="Ingresa al menos 3 letras"
+                      value="Doe"
                       required
                     />
                   </div>
@@ -189,6 +191,7 @@
                     name="email"
                     pattern="(?=.*[@]).{4,}"
                     title="Ingresa un correo válido"
+                    value="jdoe@test.com"
                     required
                   />
                 </div>
@@ -202,16 +205,18 @@
                     name="contra"
                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
                     title="La contraseña debe contener al menos un número, una mayúscula, una minúcula y por lo menos 8 caracteres"
+                    value="Esta es una contrasena1234"
                     required
-                  />
+                    />
                 </div>
                 <div class="input-group mb-3">
-                  <input
+                    <input
                     type="password"
                     class="form-control col-12"
                     id="confirm_password"
                     aria-describedby="basic-addon3"
                     placeholder="Comfirmar contraseña"
+                    value="Esta es una contrasena1234"
                     required
                   />
                 </div>
@@ -225,6 +230,7 @@
                     placeholder="Fecha"
                     name="fecha"
                     max="2020-12-31"
+                    value="2001-01-01"
                     required
                   />
                 </div>
@@ -249,6 +255,7 @@
                     name="genero"
                     value="radio_hombre"
                     class="custom-control-input"
+                    checked
                     required
                   />
                   <label class="custom-control-label" for="radioHombre"
@@ -267,6 +274,7 @@
                   name="url"
                   pattern=".{4,}"
                   title="Ingresa una url válida"
+                  value="https://randomuser.me/api/portraits/men/0.jpg"
                   required
                 />
               </div>
