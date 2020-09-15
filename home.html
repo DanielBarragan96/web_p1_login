@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/3580a313fc.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <button
+        class="navbar-toggler d-lg-none"
+        type="button"
+        data-toggle="collapse"
+        data-target="#collapsibleNavId"
+        aria-controls="collapsibleNavId"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="#Register"
+              data-toggle="modal"
+              data-target="#registerModal"
+              >Registrarse</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="#Login"
+              data-toggle="modal"
+              data-target="#loginModal"
+              >Login</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="consulta.html"
+              >Administración de usuarios
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="jumbotron">
+      <h1 class="display-3">DASW</h1>
+      <p class="lead">Crea una interface web para registro de usuarios</p>
+      <hr class="my-2" />
+      <ul>
+        <li>Login</li>
+        <li>Registro</li>
+        <li>Consultas</li>
+      </ul>
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button"
+          >Ir a consultas</a
+        >
+      </p>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="loginModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="login_modal"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="login_modal">Login</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon3">
+                    <i class="fas fa-user"></i>
+                  </span>
+                </div>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="login_email"
+                  aria-describedby="basic-addon3"
+                  placeholder="correo registrado"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon3">
+                    <i class="fas fa-key"></i>
+                  </span>
+                </div>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="login_password"
+                  aria-describedby="basic-addon3"
+                  placeholder="contraseña"
+                />
+              </div>
+            </div>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">
+              Login
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+              id="button_close"
+            >
+              Close
+            </button>
+          </div>
+          <div class="modal-footer">
+            <small class="mr-auto"
+              >No tienes cuenta!
+              <a class="sections" href="#button_close" title="Contacto">
+                Registrate aquí
+              </a>
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="registerModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="register_modal"
+      aria-hidden="true"
+    >
+      <form
+        enctype="text/plain"
+        method="post"
+        oninput='confcontra.setCustomValidity(confcontra.value != contra.value ? "Las contraseñas no coinciden." : "")'
+        action="mailto:correo@iteso.mx?subject=Contacto"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="register_modal">Registra usuario</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <!-- Row -->
+                <div class="row">
+                  <div class="col-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="register_name"
+                      aria-describedby="basic-addon3"
+                      placeholder="Nombre o nombres"
+                      name="nombre"
+                      pattern="[A-Za-z]+.{2,}"
+                      title="Ingresa al menos 3 letras"
+                      required
+                    />
+                  </div>
+                  <div class="col-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="register_last_name"
+                      aria-describedby="basic-addon3"
+                      placeholder="Apellidos"
+                      name="apellido"
+                      pattern="[A-Za-z]+.{2,}"
+                      title="Ingresa al menos 3 letras"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="input-group mb-3">
+                  <input
+                    type="text"
+                    class="form-control col-12"
+                    id="register_email"
+                    aria-describedby="basic-addon3"
+                    placeholder="Tu correo"
+                    name="email"
+                    pattern="(?=.*[@]).{4,}"
+                    title="Ingresa un correo válido"
+                    required
+                  />
+                </div>
+                <div class="input-group mb-3">
+                  <input
+                    type="password"
+                    class="form-control col-12"
+                    id="register_password"
+                    aria-describedby="basic-addon3"
+                    placeholder="Contraseña"
+                    name="contra"
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+                    title="La contraseña debe contener al menos un número, una mayúscula, una minúcula y por lo menos 8 caracteres"
+                    required
+                  />
+                </div>
+                <div class="input-group mb-3">
+                  <input
+                    type="password"
+                    class="form-control col-12"
+                    id="confirm_password"
+                    aria-describedby="basic-addon3"
+                    placeholder="Comfirmar contraseña"
+                    required
+                  />
+                </div>
+
+                <div class="input-group mb-3">
+                  <input
+                    type="date"
+                    class="form-control col-12"
+                    id="fecha"
+                    aria-describedby="basic-addon3"
+                    placeholder="Fecha"
+                    name="fecha"
+                    max="2020-12-31"
+                    required
+                  />
+                </div>
+
+                <div class="custom-control custom-radio">
+                  <input
+                    type="radio"
+                    id="radioMujer"
+                    name="genero"
+                    value="radio_mujer"
+                    class="custom-control-input"
+                    required
+                  />
+                  <label class="custom-control-label" for="radioMujer"
+                    >Mujer</label
+                  >
+                </div>
+                <div class="custom-control custom-radio">
+                  <input
+                    type="radio"
+                    id="radioHombre"
+                    name="genero"
+                    value="radio_hombre"
+                    class="custom-control-input"
+                    required
+                  />
+                  <label class="custom-control-label" for="radioHombre"
+                    >Hombre</label
+                  >
+                </div>
+              </div>
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  class="form-control col-12"
+                  id="url"
+                  aria-describedby="basic-addon3"
+                  placeholder="Url de imagen de perfil"
+                  inputmode="url"
+                  name="url"
+                  pattern=".{4,}"
+                  title="Ingresa una url válida"
+                  required
+                />
+              </div>
+
+              <!-- Final -->
+              <button type="submit" class="btn btn-primary">Registrarse</button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+                id="button_close"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
