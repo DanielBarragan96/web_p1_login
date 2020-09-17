@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="./Practica1.css">
+<script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=vQgqslH0h84pwLiZZAD6yTMGkt23gnK7wIUwWJzjJLW_qtzRg_3yUjXT0yF_yr1HgpRyxO_ytqqL2ZYqFOxgC8jNAvEdWUG3kYWDt9S6FvKfO_sbFqJWshqUC86_6pTbC7WiY_45eb9VxebkI-0nl9p1pueYXNrXQEkV0TCRQbw9DtmWmAHXQQ8TjT7_IWTlsAvSrdcCqCAHPlsXxZiT7A" charset="UTF-8"></script></head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <p class="detalle" id="nombre"></p>
+        <p class="detalle" id="apellido"></p>
+        <p class="detalle" id="contraseña"></p>
+        <p class="detalle" id="email"></p>
+        <p class="detalle" id="fecha"></p>
+        <p class="detalle" id="sexo"></p>
+        <a href="./consulta.html" class="retorno">Regresar a consulta de usuarios</a>
+      </div>
+      <div class="col-md-auto">
+        <img class="detalle" src="" alt="" id="img">
+      </div>
+    </div>
+    
+    
+
+    <script>
+      let nombre = "John";
+      let apellido = "Doe";
+      let email = "jdoe@test.com";
+      let contraseña = "Contra1234";
+      let fecha = "2001-01-01";
+      let sexo = "Hombre";
+      let url = "https://randomuser.me/api/portraits/men/0.jpg";
+      document.getElementById("nombre").innerHTML = "Nombre: " + nombre;
+      document.getElementById("apellido").innerHTML = "Apellido: " + apellido;
+      document.getElementById("email").innerHTML = "Correo: " + email;
+      document.getElementById("contraseña").innerHTML = "Contraseña: " + "*********";
+      document.getElementById("fecha").innerHTML = "Fecha de nacimiento: " + fecha;
+      document.getElementById("sexo").innerHTML = "Sexo: " + sexo;
+      document.getElementById("img").src = `${url}`;
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"></script>
+</body>
+
+</html>

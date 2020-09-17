@@ -6,13 +6,15 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="usuarios.js"></script>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
-   
+    <link rel="stylesheet" href="./Practica1.css">
+    
     <style>
             .media{
                 border:1px solid #d5dbdd;
@@ -68,14 +70,15 @@
                 </div>
                 <div class="media-right align-self-center">
                     <div class="row">
-                        <a href="#" class="btn btn-primary edit"><i class="fas fa-search edit  "></i></a>
+                        <a href="detalle.html" class="btn btn-primary edit"><i class="fas fa-search edit  "></i></a>
                     </div>
                     <div class="row">
-                        <a href="#" class="btn btn-primary mt-2"><i class="fas fa-pencil-alt edit  " data-toggle="modal"
+                        <a href="#editModal" class="btn btn-primary mt-2"><i class="fas fa-pencil-alt edit  "  data-toggle="modal"
                             data-target="#editModal"></i></a>
                     </div>
                     <div class="row">
-                        <a href="#" class="btn btn-primary mt-2"><i class="fas fa-trash-alt  remove "></i></i></a>
+                        <a href="#confirmaborrar" class="btn btn-primary mt-2"><i class="fas fa-trash-alt  remove " data-toggle="modal"
+                            data-target="#confirmaborrar"></i></i></a>
                     </div>
                 </div>
             </div>
@@ -91,18 +94,217 @@
                     </div>
                     <div class="media-right align-self-center">
                             <div class="row">
-                                <a href="#" class="btn btn-primary edit"><i class="fas fa-search edit  "></i></a>
+                                <a href="detalle.html" class="btn btn-primary edit"><i class="fas fa-search edit  "></i></a>
                             </div>
                             <div class="row">
-                                <a href="#" class="btn btn-primary mt-2"><i class="fas fa-pencil-alt edit  "></i></a>
+                                <a href="#editModal" class="btn btn-primary mt-2"><i class="fas fa-pencil-alt edit  "  data-toggle="modal"
+                                    data-target="#editModal"></i></a>
                             </div>
                             <div class="row">
-                                <a href="#" class="btn btn-primary mt-2"><i class="fas fa-trash-alt  remove "></i></i></a>
+                                <a href="#confirmaborrar" class="btn btn-primary mt-2"><i class="fas fa-trash-alt  remove " data-toggle="modal"
+                                    data-target="#confirmaborrar"></i></i></a>
                             </div>
                         </div>
             </div>
         </div>
 
+        <!-- Modal Editar usuario -->
+    <div
+    class="modal fade"
+    id="editModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="register_modal"
+    aria-hidden="true"
+  >
+    <form
+      enctype="text/plain"
+      method="post"
+      oninput='confcontra.setCustomValidity(confcontra.value != contra.value ? "Las contraseñas no coinciden." : "")'
+      action="mailto:correo@iteso.mx?subject=Contacto"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="register_modal">Editar usuario</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <!-- Row -->
+              <div class="row">
+                <div class="col-6">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="register_name"
+                    aria-describedby="basic-addon3"
+                    placeholder="Nombre o nombres"
+                    name="nombre"
+                    pattern="[A-Za-z]+.{2,}"
+                    title="Ingresa al menos 3 letras"
+                    value="John"
+                    required
+                  />
+                </div>
+                <div class="col-6">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="register_last_name"
+                    aria-describedby="basic-addon3"
+                    placeholder="Apellidos"
+                    name="apellido"
+                    pattern="[A-Za-z]+.{2,}"
+                    title="Ingresa al menos 3 letras"
+                    value="Doe"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  class="form-control col-12"
+                  id="register_email"
+                  aria-describedby="basic-addon3"
+                  placeholder="Tu correo"
+                  name="email"
+                  pattern="(?=.*[@]).{4,}"
+                  title="Ingresa un correo válido"
+                  value="jdoe@test.com"
+                  required
+                />
+              </div>
+              <div class="input-group mb-3">
+                <input
+                  type="password"
+                  class="form-control col-12"
+                  id="register_password"
+                  aria-describedby="basic-addon3"
+                  placeholder="Contraseña"
+                  name="contra"
+                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+                  title="La contraseña debe contener al menos un número, una mayúscula, una minúcula y por lo menos 8 caracteres"
+                  value="Contra1234"
+                  required
+                  />
+              </div>
+              <div class="input-group mb-3">
+                  <input
+                  type="password"
+                  class="form-control col-12"
+                  id="confirm_password"
+                  aria-describedby="basic-addon3"
+                  placeholder="Comfirmar contraseña"
+                  value="Contra1234"
+                  required
+                />
+              </div>
+
+              <div class="input-group mb-3">
+                <input
+                  type="date"
+                  class="form-control col-12"
+                  id="fecha"
+                  aria-describedby="basic-addon3"
+                  placeholder="Fecha"
+                  name="fecha"
+                  max="2020-12-31"
+                  value="2001-01-01"
+                  required
+                />
+              </div>
+
+              <div class="custom-control custom-radio">
+                <input
+                  type="radio"
+                  id="radioMujer"
+                  name="genero"
+                  value="radio_mujer"
+                  class="custom-control-input"
+                  required
+                />
+                <label class="custom-control-label" for="radioMujer"
+                  >Mujer</label
+                >
+              </div>
+              <div class="custom-control custom-radio">
+                <input
+                  type="radio"
+                  id="radioHombre"
+                  name="genero"
+                  value="radio_hombre"
+                  class="custom-control-input"
+                  checked
+                  required
+                />
+                <label class="custom-control-label" for="radioHombre"
+                  >Hombre</label
+                >
+              </div>
+            </div>
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                class="form-control col-12"
+                id="url"
+                aria-describedby="basic-addon3"
+                placeholder="Url de imagen de perfil"
+                inputmode="url"
+                name="url"
+                pattern=".{4,}"
+                title="Ingresa una url válida"
+                value="https://randomuser.me/api/portraits/men/0.jpg"
+                required
+              />
+            </div>
+
+            <!-- Final -->
+            <button type="submit" class="btn btn-primary">Registrarse</button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+              id="button_close"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- Modal eliminar usuario -->
+  <div class="modal fade" id="confirmaborrar" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Confirmar la eliminación permanente del usuario </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="" id="confirmoform" >
+            <button id="confirmo si" type="submit" class="btn btn-success mt-3" onclick="borrarUsuario(guardaValorBorrado)">Confirmo</button>
+            <button type="button" class="btn btn-secondary mt-3" data-dismiss="modal">Cerrar</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
         
         <nav class="row mt-3 " aria-label="Page navigation">
                 <ul class="pagination">
@@ -116,184 +318,6 @@
 
     </div>
 
-
-    <!-- Modal Editar usuario -->
-    <div
-      class="modal fade"
-      id="editModal"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="register_modal"
-      aria-hidden="true"
-    >
-      <form
-        enctype="text/plain"
-        method="post"
-        oninput='confcontra.setCustomValidity(confcontra.value != contra.value ? "Las contraseñas no coinciden." : "")'
-        action="mailto:correo@iteso.mx?subject=Contacto"
-      >
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="register_modal">Editar usuario</h5>
-              <button
-                type="button"
-                class="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="form-group">
-                <!-- Row -->
-                <div class="row">
-                  <div class="col-6">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="register_name"
-                      aria-describedby="basic-addon3"
-                      placeholder="Nombre o nombres"
-                      name="nombre"
-                      pattern="[A-Za-z]+.{2,}"
-                      title="Ingresa al menos 3 letras"
-                      value="John"
-                      required
-                    />
-                  </div>
-                  <div class="col-6">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="register_last_name"
-                      aria-describedby="basic-addon3"
-                      placeholder="Apellidos"
-                      name="apellido"
-                      pattern="[A-Za-z]+.{2,}"
-                      title="Ingresa al menos 3 letras"
-                      value="Doe"
-                      required
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <div class="input-group mb-3">
-                  <input
-                    type="text"
-                    class="form-control col-12"
-                    id="register_email"
-                    aria-describedby="basic-addon3"
-                    placeholder="Tu correo"
-                    name="email"
-                    pattern="(?=.*[@]).{4,}"
-                    title="Ingresa un correo válido"
-                    value="jdoe@test.com"
-                    required
-                  />
-                </div>
-                <div class="input-group mb-3">
-                  <input
-                    type="password"
-                    class="form-control col-12"
-                    id="register_password"
-                    aria-describedby="basic-addon3"
-                    placeholder="Contraseña"
-                    name="contra"
-                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
-                    title="La contraseña debe contener al menos un número, una mayúscula, una minúcula y por lo menos 8 caracteres"
-                    value="Esta es una contrasena1234"
-                    required
-                    />
-                </div>
-                <div class="input-group mb-3">
-                    <input
-                    type="password"
-                    class="form-control col-12"
-                    id="confirm_password"
-                    aria-describedby="basic-addon3"
-                    placeholder="Comfirmar contraseña"
-                    value="Esta es una contrasena1234"
-                    required
-                  />
-                </div>
-
-                <div class="input-group mb-3">
-                  <input
-                    type="date"
-                    class="form-control col-12"
-                    id="fecha"
-                    aria-describedby="basic-addon3"
-                    placeholder="Fecha"
-                    name="fecha"
-                    max="2020-12-31"
-                    value="2001-01-01"
-                    required
-                  />
-                </div>
-
-                <div class="custom-control custom-radio">
-                  <input
-                    type="radio"
-                    id="radioMujer"
-                    name="genero"
-                    value="radio_mujer"
-                    class="custom-control-input"
-                    required
-                  />
-                  <label class="custom-control-label" for="radioMujer"
-                    >Mujer</label
-                  >
-                </div>
-                <div class="custom-control custom-radio">
-                  <input
-                    type="radio"
-                    id="radioHombre"
-                    name="genero"
-                    value="radio_hombre"
-                    class="custom-control-input"
-                    checked
-                    required
-                  />
-                  <label class="custom-control-label" for="radioHombre"
-                    >Hombre</label
-                  >
-                </div>
-              </div>
-              <div class="input-group mb-3">
-                <input
-                  type="text"
-                  class="form-control col-12"
-                  id="url"
-                  aria-describedby="basic-addon3"
-                  placeholder="Url de imagen de perfil"
-                  inputmode="url"
-                  name="url"
-                  pattern=".{4,}"
-                  title="Ingresa una url válida"
-                  value="https://randomuser.me/api/portraits/men/0.jpg"
-                  required
-                />
-              </div>
-
-              <!-- Final -->
-              <button type="submit" class="btn btn-primary">Registrarse</button>
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-dismiss="modal"
-                id="button_close"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      </form>
-    </div>
 
    
     <!-- Optional JavaScript -->
