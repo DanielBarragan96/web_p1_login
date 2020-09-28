@@ -19,4 +19,4 @@ Se desea tener las interfaces necesarias para la gestión de usuarios en una apl
 8. Interfaz de detalle de usuario (opcional)
 9. Interfaz responsiva (Opcional)
 
-[documento](https://drive.google.com/file/d/1-wBf6MM-FUESQg68z-dvO1tF59rsN9nA/view?usp=sharing)
+[Enunciado completo de la práctica](https://drive.google.com/file/d/1-wBf6MM-FUESQg68z-dvO1tF59rsN9nA/view?usp=sharing)
